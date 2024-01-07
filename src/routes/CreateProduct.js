@@ -15,7 +15,7 @@ function CreateProduct() {
     bedroom: '',
     bath: "",
     area: "",
-    location_url: ""
+    location_url: "",
   }])
 
   const navigate = useNavigate()
@@ -35,7 +35,7 @@ function CreateProduct() {
     e.preventDefault()
     const { title, price, location, bedroom, bath, area, location_url } = contact
     const newContact = {
-      title, price, location, bedroom, bath, area, location_url
+      title, price, location, bedroom, bath, area, location_url, 
     }
     console.log(newContact)
     axios.post("http://localhost:5000/api/contacts", newContact)
@@ -47,8 +47,13 @@ function CreateProduct() {
       bedroom: '',
       bath: "",
       area: "",
-      location_url: ""
+      location_url: "",
     })
+    
+    setTimeout(() => {
+      navigate('/')
+      
+    }, 2000);
   }
 
 
